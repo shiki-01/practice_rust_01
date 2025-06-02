@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+}
+
+#title {
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#dogview {
+    width: 500px;
+    height: 500px;
+}
+
+#dogview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+#buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#skip {
+    background-color: #2990f0;
+}
+
+#skip:hover {
+    background-color: #2079cc;
+}
+
+#save {
+    background-color: #ff5d9b;
+}
+
+#save:hover {
+    background-color: #c94275;
+}
