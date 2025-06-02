@@ -10,9 +10,18 @@ body {
 }
 
 #title {
-    color: #ffffff;
-    font-size: 1.5em;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px
+}
+
+#title h1, #title a {
+    color: #ffffff;
+    font-size: 1.2em;
+    text-decoration: none;
 }
 
 #dogview {
@@ -59,4 +68,28 @@ body {
 
 #save:hover {
     background-color: #c94275;
+}
+
+#favorites {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#favorites-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#favorites-container .favorite-dog {
+    width: 500px;
+    height: 500px;
+}
+
+#favorites-container .favorite-dog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
 }
