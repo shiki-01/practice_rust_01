@@ -1,8 +1,6 @@
-use dioxus::{logger::tracing::info, prelude::*};
+use dioxus::prelude::*;
 
-const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
-const HEADER_SVG: Asset = asset!("/assets/header.svg");
 
 fn main() {
     #[cfg(feature = "server")]
@@ -17,15 +15,14 @@ fn main() {
 async fn launch_server() {
     dioxus::logger::initialize_default();
 
-    let socket_addr = dioxus_cli_config::fullstack_adders_or_localhost();
+    let socket_addr = dioxus_cli_config::fullstack_address_or_localhost();
 
     let router = axum::Router::new()
-        .serve_dixous_application(ServerConfigBuilder::new(), App)
+        .serve_dioxus_application(ServeConfigBuilder::new(), App)
         .into_make_service();
 
-    let listener = tokio::net::TcpListener::bind(soket_addr).await.unwrap();
+    let listener = tokio::net::TcpListener::bind(socket_addr).await.unwrap();
     axum::serve(listener, router).await.unwrap();
-
 }
 
 #[derive(Clone)]
